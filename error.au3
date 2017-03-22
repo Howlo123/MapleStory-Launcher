@@ -1,6 +1,6 @@
 #NoTrayIcon
 #include-once
-#include <GUIConstantsEx.au3
+#include <GUIConstantsEx.au3>
 #include <WinAPISys.au3>
 #include <WindowsConstants.au3>
 #include <ColorConstants.au3>
@@ -12,7 +12,7 @@ _WinAPI_DestroyIcon($hIcon)
 _WinAPI_SetClassLongEx($GUI,$GCL_HICON,0)
 _WinAPI_SetClassLongEx($GUI,$GCL_HICONSM,0)
 
-Local $Label_1 = GuiCtrlCreateLabel("µLªkµn¤J¦øªA¾¹¡C" & @CRLF & "¸Ô±¡¬d¬İ©x¤èºô¯¸¡C",-1,20,350,40,$SS_CENTER)
+Local $Label_1 = GuiCtrlCreateLabel("ç„¡æ³•ç™»å…¥ä¼ºæœå™¨ã€‚" & @CRLF & "è©³æƒ…æŸ¥çœ‹å®˜æ–¹ç¶²ç«™ã€‚",-1,20,350,40,$SS_CENTER)
 Local $Button_1 = GUICtrlCreateButton("&YES",80,55,80,25)
 Local $Button_2 = GUICtrlCreateButton("&NO",180,55,80,25)
 GUISetState(@SW_SHOW)
