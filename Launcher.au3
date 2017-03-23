@@ -1,3 +1,13 @@
+#cs ----------------------------------------------------------------------------
+
+ AutoIt Version: 1.01
+ Author:         Ethan
+
+ Script Function:
+	偵測目錄、判斷網路狀態、自動更新 HShield 版本，待增自動更新。
+
+#ce ----------------------------------------------------------------------------
+
 #NoTrayIcon
 #RequireAdmin
 #include <GUIConstantsEx.au3>
