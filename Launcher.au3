@@ -22,7 +22,7 @@
 Dim Const $Version = 1.01
 Dim $IPAddress,$GetData,$TotalSize,$GUI,$Label1,$Button1,$Gamepath,$Port,$HShield_GUI,$HShield_Progress,$HShield_URL,$HShield_Button1,$HShield_Button2,$HShield_Label2
 
-$IPAddress = "104.199.151.150"
+$IPAddress = "104.199.253.6"
 $Port = 8484
 $GetData = "https://lmly9193.github.io/MapleStory-Launcher/Data"
 $HShield_URL = "https://lmly9193.github.io/MapleStory-Launcher/HShield.exe"
