@@ -81,7 +81,7 @@ Func GUI()
   GUICtrlSetData($Label1,ServerStatus())
 
   While 1
-    Local $Msg = GUIGetMsg()
+    $Msg = GUIGetMsg()
       Switch $Msg
         Case $GUI_EVENT_CLOSE
           Exit
@@ -110,7 +110,7 @@ EndFunc
 
 ; 執行遊戲函數
 Func Gamestart()
-  Local $LoginAddress = $IPAddress&" "&$Port
+  $LoginAddress = $IPAddress&" "&$Port
 
   GUICtrlSetData($Button1,"遊戲愉快...")
   GUICtrlSetState($Button1,$GUI_DISABLE)
@@ -144,16 +144,16 @@ EndFunc
 
 ; 版本內容函數
 Func GetData()
-  Return BinaryToString(InetRead($GetData,1),4)
+  Return BinaryToString(InetRead($GetData,3),4)
 EndFunc
 
 ; 伺服器狀態函數
 Func ServerStatus()
   TCPStartup()
-  Local $iSocket = TCPConnect($IPAddress,$Port)
+  $iSocket = TCPConnect($IPAddress,$Port)
 
   If @error Then
-    Local $iError = @error
+    $iError = @error
       GUICtrlSetColor($Label1,$COLOR_RED)
       GUICtrlSetState($Button1,$GUI_DISABLE)
       Switch $iError
@@ -177,14 +177,14 @@ EndFunc
 
 ; HShield 下載函數
 Func HShieldDownload()
-  $TotalSize = InetGetSize($HShield_URL)
+  $TotalSize = InetGetSize($HShield_URL,3)
   If $TotalSize > 0 Then
-    Local $hDownload = InetGet($HShield_URL,"HShield.exe",1,1)
+    $hDownload = InetGet($HShield_URL,"HShield.exe",3,1)
     Do
       Sleep(50)
-      Local $NowDownload = InetGetInfo($hDownload,0)
-      Local $per = Int($NowDownload/$TotalSize*100)
-      Local $res = Int(StringLeft($per,3))
+      $NowDownload = InetGetInfo($hDownload,0)
+      $per = Int($NowDownload/$TotalSize*100)
+      $res = Int(StringLeft($per,3))
       GUICtrlSetData($HShield_Progress,$res)
       GUICtrlSetData($HShield_Label2,$res&" %")
       GUICtrlSetData($HShield_Label3,Int($NowDownload/1048576)&" MB / "&Int($TotalSize/1048576)&" MB")
