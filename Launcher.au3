@@ -29,7 +29,7 @@ $GetData = "https://lmly9193.github.io/MapleStory-Launcher/Data"
 $HShield_URL = "https://lmly9193.github.io/MapleStory-Launcher/HShield.exe"
 
 ;僅允許一個視窗執行
-_Singleton("Launcher")
+_Singleton("MapleStory Launcher")
 _Singleton("HShieldUpdate")
 
 If @OSVersion = "Win_7" Then
@@ -59,7 +59,7 @@ EndIf
 
 ; 主介面控制函數
 Func GUI()
-  $GUI = GUICreate("Launcher",700,400,-1,-1,BitOR($WS_CAPTION,$WS_SYSMENU))
+  $GUI = GUICreate("MapleStory Launcher",700,400,-1,-1,BitOR($WS_CAPTION,$WS_SYSMENU))
 
   GUISetBkColor($COLOR_WHITE)
   GUICtrlSetDefBkColor($COLOR_WHITE)
@@ -71,13 +71,13 @@ Func GUI()
     $Label1 = GUICtrlCreateLabel("未檢測",530,30,150,20,$SS_CENTER)
 
   $Group3 = GUICtrlCreateGroup("公告",520,70,170,120)
-    $Label2 = GUICtrlCreateLabel(StringFormat("。禁止使用外掛\r\n\n。相容性請設定 Windows 7\r\n\n。本程式會自動載入滑鼠修復工具，關閉遊戲時請等待滑鼠修畢再離開。"),530,90,150,90)
+    $Label2 = GUICtrlCreateLabel(StringFormat("玩 Game 不開掛\r\n\n開掛玩不了\r\n\n檢舉外掛人人有責"),530,90,150,90)
 
   $Group4 = GUICtrlCreateGroup("倍率",520,200,170,70)
     $Label3 = GUICtrlCreateLabel(StringFormat("經驗 3 倍\r\n掉寶 2 倍\r\n金錢 2 倍"),530,220,150,40,$SS_CENTER)
 
   $Group5 = GUICtrlCreateGroup("版本",520,280,170,60)
-    $Label4 = GUICtrlCreateLabel("Client TMS v1.13"&@CRLF&"Launcher v"&$Version,530,300,150,30,$SS_CENTER)
+    $Label4 = GUICtrlCreateLabel("楓之谷 v1.13"&@CRLF&"登入器 v"&$Version,530,300,150,30,$SS_CENTER)
 
   $Button1 = GUICtrlCreateButton("開始遊戲!",0,350,700,50)
 
