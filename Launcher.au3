@@ -32,23 +32,29 @@ $HShield_URL = "https://lmly9193.github.io/MapleStory-Launcher/HShield.exe"
 _Singleton("Launcher")
 _Singleton("HShieldUpdate")
 
-If FileExists("MapleStory.exe") = 0 Then
-  MsgBox($MB_ICONINFORMATION,"注意","錯誤的遊戲目錄")
-Else
-  If Internet_Check() Then
-    MsgBox($MB_ICONINFORMATION,"注意","請確認網路狀態")
+If @OSVersion = "Win_7" Then
+  If FileExists("MapleStory.exe") = 0 Then
+    MsgBox($MB_ICONINFORMATION,"注意","錯誤的遊戲目錄")
   Else
-    If FileExists("HShield.ver") = 0 Then
-      If InetGetSize($HShield_URL) = 0 Then
-        MsgBox($MB_ICONINFORMATION,"注意","無法取得更新檔案")
-      Else
-        HShieldGUI()
-      EndIf
-    ;ElseIf <expression> Then
+    If Internet_Check() Then
+      MsgBox($MB_ICONINFORMATION,"注意","請確認網路狀態")
     Else
-      GUI()
+      If FileExists("HShield.ver") = 0 Then
+        If InetGetSize($HShield_URL) = 0 Then
+          MsgBox($MB_ICONINFORMATION,"注意","無法取得更新檔案")
+        Else
+          HShieldGUI()
+        EndIf
+      ;ElseIf <expression> Then
+      Else
+        GUI()
+      EndIf
     EndIf
   EndIf
+ElseIf @OSVersion = "WIN_XP" Then
+  MsgBox($MB_ICONINFORMATION,"注意","基於系統安全性楓之谷將不再支援 Windows XP")
+Else
+  MsgBox($MB_ICONINFORMATION,"注意","請將相容性設為 Windows 7")
 EndIf
 
 ; 主介面控制函數
@@ -116,6 +122,7 @@ Func Gamestart()
   GUICtrlSetState($Button1,$GUI_DISABLE)
   Sleep(1000)
 
+  dxwnd()
   ShellExecute("MapleStory.exe",$LoginAddress)
   GUISetState(@SW_HIDE,$GUI)
 
@@ -126,20 +133,39 @@ Func Gamestart()
 
   GUISetState(@SW_SHOW,$GUI)
 
-  FileInstall("mousefix.exe",@TempDir&"\mousefix.exe")
-  ShellExecute(@TempDir&"\mousefix.exe","",@TempDir,"",@SW_HIDE)
-  MsgBox($MB_ICONINFORMATION,"修復中",StringFormat("請確認滑鼠回復正常後再關閉此視窗。"))
-
   ProcessClose("MapleStory.exe")
   ProcessClose("ASPLnchr.exe")
   ProcessClose("aostray.exe")
-  ProcessClose("mousefix.exe")
 
-  FileDelete(@TempDir&"\mousefix.exe")
+  Sleep(2000)
+  MsgBox($MB_ICONINFORMATION,"修復中...",StringFormat("稍 待 滑 鼠 正 常 再 關 閉 此 視 窗 ..."))
+  detemp()
 
   GUICtrlSetState($Button1,$GUI_ENABLE)
   GUICtrlSetData($Button1,"開始遊戲!")
 
+EndFunc
+
+; 視窗化函數
+Func dxwnd()
+  FileInstall("dxwnd.exe",@ScriptDir&"\dxwnd.exe")
+  FileInstall("dxwnd.dll",@ScriptDir&"\dxwnd.dll")
+  FileInstall("mousefix.exe",@ScriptDir&"\mousefix.exe")
+  IniWriteSection("dxwnd.ini","target","path0="&@ScriptDir&"\MapleStory.exe"&@LF&"ver0=8"&@LF&"flag0=64"&@LF&"initx0=0"&@LF&"inity0=0"&@LF&"minx0=0"&@LF&"miny0=0"&@LF&"maxx0=639"&@LF&"maxy0=479")
+  ShellExecute("mousefix.exe","",@ScriptDir,"",@SW_HIDE)
+  ShellExecute("dxwnd.exe","",@ScriptDir,"",@SW_MINIMIZE)
+EndFunc
+
+; 刪除暫存
+Func detemp()
+  ProcessClose("mousefix.exe")
+  ProcessClose("dxwnd.exe")
+  Sleep(1000)
+  FileDelete("mousefix.exe")
+  FileDelete("dxwnd.exe")
+  FileDelete("dxwnd.dll")
+  FileDelete("dxwnd.ini")
+  FileDelete("dxwnd.log")
 EndFunc
 
 ; 版本內容函數
