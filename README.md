@@ -25,7 +25,7 @@
 持續更新...
 
 ## 貢獻 Credits
-* @lmly9193
+@lmly9193
 
 ## 授權 License
 [GNU General Public License v3.0](LICENSE)
