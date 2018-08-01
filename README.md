@@ -25,10 +25,10 @@
 持續更新...
 
 ## 作者 Author
-@lmly9193
+[@lmly9193](https://github.com/lmly9193)
 
 ## 貢獻 Credits
-@lmly9193
+[@lmly9193](https://github.com/lmly9193)
 
 ## 授權 License
 [GNU General Public License v3.0](LICENSE)
