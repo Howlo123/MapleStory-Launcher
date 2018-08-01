@@ -1,6 +1,6 @@
 # 楓之谷私服登入器
 
-[![版本](https://img.shields.io/badge/版本-1.0.0-blue.svg?style=flat-square)](#)
+[![版本](https://img.shields.io/badge/版本-1.0.1-blue.svg?style=flat-square)](#)
 [![TMS版本](https://img.shields.io/badge/TMS-113-blue.svg?style=flat-square)](#)
 [![GitHub issues](https://img.shields.io/github/issues/lmly9193/MapleStory-Launcher.svg?style=flat-square)](https://github.com/lmly9193/MapleStory-Launcher/issues)
 [![GitHub forks](https://img.shields.io/github/forks/lmly9193/MapleStory-Launcher.svg?style=flat-square)](https://github.com/lmly9193/MapleStory-Launcher/network)
