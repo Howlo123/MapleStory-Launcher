@@ -24,6 +24,9 @@
 ## 功能 Function
 持續更新...
 
+## 作者 Author
+@lmly9193
+
 ## 貢獻 Credits
 @lmly9193
 
