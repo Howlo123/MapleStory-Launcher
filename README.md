@@ -4,10 +4,11 @@
 [![TMS版本](https://img.shields.io/badge/TMS-113-blue.svg?style=flat-square)](#)
 [![GitHub license](https://img.shields.io/github/license/lmly9193/MapleStory-Launcher.svg?style=flat-square)](https://github.com/lmly9193/MapleStory-Launcher/blob/master/LICENSE)
 
-## 主畫面
+## 預覽
+### 主畫面
 [![Imgur](https://i.imgur.com/hOEedB5.jpg)](#)
 
-## 基礎更新
+### 基礎更新
 [![Imgur](https://i.imgur.com/lE3k6zM.jpg)](#)
 
 ## 功能
