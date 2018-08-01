@@ -1,4 +1,7 @@
 # MapleStoryLauncher  
+
+[![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg?style=flat-square)](https://github.com/lmly9193/MapleStory-Launcher)
+
 ```
 TMS Version 113
 ```
